@@ -1,0 +1,361 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ryan&amp;Katie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="icon" type="image/ico" href="assets/img/favicon.ico" />
+
+    <!-- Le styles -->
+    <link href="assets/styles/main.css" rel="Stylesheet" />
+    <link href="assets/styles/normalize.css" rel="Stylesheet" />
+    <link href="assets/styles/custom.css" rel="Stylesheet" />
+    <link href="assets/styles/font-awesome.min.css" rel="Stylesheet" />
+    <link href="assets/styles/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="assets/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/styles/galleria.classic.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'/>
+    <script type="text/javascript" src="assets/scripts/jquery-1.9.1.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
+    <script src="assets/scripts/modernizr-2.6.2.min.js"></script>
+    <script src="assets/scripts/galleria-1.2.9.min.js"></script>
+    <style>
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body 
+    {
+      padding-top:0px;
+      padding-bottom: 40px;
+      color: #5a5a5a;
+      background-color: #5a5a5a;
+      background-image: url('assets/img/bg.png');
+    }
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+    
+    .fancytext 
+    {
+        font-family: 'Marcellus';
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 24px;
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 5px;
+      margin-top:-20px
+    }
+    #myCarousel 
+    {
+        -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+    .body-container 
+    {
+     -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);   
+    }
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 9999;
+    }
+    .carousel .item {
+      height: 576px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1024px;
+      height: 576px;
+    }
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 400px;
+      opacity: 1;
+      text-shadow: black 0.05em 0.05em 0.2em;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 15px;
+      opacity: 0.8;
+    }
+    .carousel-caption .btn:hover 
+    {
+        opactiy: 1;   
+    }
+    
+    .body-container 
+    {
+        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    }
+    
+    .header
+    {
+    	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    	background-image: url('assets/img/bg.png');
+    }
+    </style>
+
+    <!-- Fav and touch icons --
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">-->
+     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+     </asp:ContentPlaceHolder>
+     <script type="text/javascript">
+         function checktab(tab) {
+             if (tab == "home") {
+                 $("#gallerytab").removeClass("active");
+                 $("#hometab").addClass("active");
+             }
+             //else if (tab == "gallery") {
+             //    $("#hometab").removeClass("active");
+             //    $("#gallerytab").addClass("active");
+             //}
+             else {
+                 $("#hometab").removeClass("active");
+                 $("#gallerytab").removeClass("active");
+             }
+        }
+        function showRSVP() {
+            $("#myModal").modal('show');
+        }
+        function familyRSVP() {
+            $("#familyRSVP").show();
+        }
+        function singleRSVP() {
+            $("#familyRSVP").hide();
+            $("#moreFam").html("");
+        }
+        var numFamily = 2;
+        function addAnother() {
+            numFamily++;
+            $("#moreFam").append(
+                '<center><p style="margin-left:auto;margin-right:auto;"><span class="fancytext">Name:&nbsp;&nbsp;</span><input type="text" id="txtFirstName'+numFamily+'" />&nbsp;&nbsp;</span><input type="text" id="txtLastName'+numFamily+'" /></p></center>'
+            );
+        }
+        function showRSVPdis() {
+            timeoutObj = setTimeout(function () {
+                $("#rsvp").popover('hide');
+            }, 3000);
+        }
+        function confirmRSVP() {
+            var familySize = numFamily;
+
+        }
+     </script>
+  </head>
+  <body>
+  <div class="container" style="width:1024px;padding-top:0px">
+      
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container" style="width:900px">
+
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="http://rgandkp.com"><span class="fancytext" style="color:#01ACCA">Ryan</span><span class="fancytext">&</span><span class="fancytext" style="color:#83BE26">Katie</span></a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav pull-right">
+                <li id="hometab"><a id="home" href="default.aspx" onclick="checktab('home')";><i style="font-size:14px" class="icon-home"></i>&nbsp;Home</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i style="font-size:14px" class="icon-user"></i>&nbsp;About Us<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a id="about" href="about-us.aspx" onclick="checktab('x');"><i class="icon-comment-alt"></i> About Us</a></li>
+                    <li><a id="proposal" href="our-proposal.aspx" onclick="checktab('x');"><i class="icon-heart"></i> The Proposal</a></li>
+                    <li><a id="honeymoon" href="honeymoon.aspx" onclick="checktab('x');"><i class="icon-plane"></i> Honeymoon</a></li>
+                    <li class="divider"></li>
+                    <li><a href="registry.aspx" style="margin:auto"><i class="icon-gift"></i> Our Registry</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i style="font-size:14px" class="icon-heart-empty"></i>&nbsp;The Wedding<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="ceremony.aspx" id="ceremony" onclick="checktab('x')";><i class="icon-bell"></i> Ceremony & Reception</a></li>
+                    <li><a href="wedding-party.aspx" id="wedding" onclick="checktab('x')";><i class="icon-group"></i> Wedding Party</a></li>
+                    <li><a href="guestbook.aspx" id="guestbook" onclick="checktab('x')";><i class="icon-book"></i> Guestbook</a></li>
+                    <li class="divider"></li>
+                    <li><a href="hotel.aspx"><i class="icon-building"></i> Lodging Information</a></li>
+                  </ul>
+                </li>
+                <li id="rsvptab"><a id="rsvp" href="#" data-content="Please check back when you receive your official invitation." data-original-title="RSVP is currently not available." onclick="checktab('rsvp');showRSVPdis();"><i class="icon-envelope"></i> RSVP</a></li>
+                <li id="gallerytab"><a id="gallery" href="gallery.aspx" onclick="checktab('gallery');"><i style="font-size:16px" class="icon-camera-retro"></i> Gallery</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+    <!-- Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="H1">Répondez, S'il Vous Plaît</h3>
+          </div>
+          <div class="modal-body">
+            <div id="entryform">
+                <h4>
+                    <span class="fancytext">Please enter your first and last name:</span>
+                </h4>
+                <center>
+                <p style="margin-left:auto;margin-right:auto;">
+                    <span class="fancytext">First Name:&nbsp;&nbsp;</span><input type="text" id="txtFirstName" />
+                <br />
+                    <span class="fancytext">Last Name:&nbsp;&nbsp;</span><input type="text" id="txtLastName" />
+                </p>
+                </center>
+                <hr />
+                <h4>
+                    <span class="fancytext">Are you RSVP'ing for a family?</span>
+                </h4>
+                <p>
+                    <div class="btn-group" data-toggle="buttons-radio">
+                      <button type="button" class="btn btn-primary" onclick="familyRSVP();">Yes</button>
+                      <button type="button" class="btn btn-primary" onclick="singleRSVP();">No</button>
+                    </div>
+                    <div id="familyRSVP" style="display:none;">
+                        <h4>
+                            <span class="fancytext">Please their first and last name<span id="theS"></span>:</span>
+                        </h4>
+                        <center>
+                        <p style="margin-left:auto;margin-right:auto;">
+                            <span class="fancytext">Name:&nbsp;&nbsp;</span><input type="text" id="txtFirstName2" />&nbsp;&nbsp;<input type="text" id="txtLastName2" />
+                        </p>
+                        </center>
+                        <div id="moreFam"></div>
+                        <button type="button" onclick="addAnother();">Add Another</button>
+                    </div>
+                </p>
+            </div>
+          </div>
+          <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button type="button" id="rsvpBtn" class="btn btn-primary" runat="server" onclick="rsvpMe();">RSVP Me!</button>
+          </div>
+    </div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+          <!-- FOOTER -->
+          <footer style="padding:15px;text-shadow: black 0.05em 0.05em 0.2em;">
+                <p class="pull-right"><a href="#">Back to top</a></p>
+                <p style="color:White">&copy; 2012 Ryan Graczyk &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+          </footer>
+    </div><!-- /.container -->
+</div>
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript">
+        !function ($) {
+            $(function () {
+                $('#myCarousel').carousel()
+            })
+            $('#rsvp').popover({
+                placement: 'bottom'
+            })
+        } (window.jQuery)
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-38737857-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+  </body>
+</html>

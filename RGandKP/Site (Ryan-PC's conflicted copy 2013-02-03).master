@@ -1,0 +1,411 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Ryan&amp;Katie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="Styles/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="Styles/font-awesome.css" rel="Stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
+    <style>
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+      background-color: #5a5a5a;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Special class on .container surrounding .navbar, used for positioning it into place. */
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+    
+    .fancytext 
+    {
+        font-family: 'Marcellus';
+    }
+
+    /* Remove border and change up box shadow for more contrast */
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+    /* Downsize the brand/project name a bit */
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 24px;
+    }
+
+    /* Navbar links: increase padding for taller navbar */
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+    /* Offset the responsive button for proper vertical alignment */
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+    /* CUSTOMIZE THE NAVBAR
+    -------------------------------------------------- */
+
+    /* Carousel base class */
+    .carousel {
+      margin-bottom: 5px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+    }
+
+    .carousel .item {
+      height: 576px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1024px;
+      height: 576px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 400px;
+      opacity: 0.7;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    
+    .carousel-caption .btn {
+      margin-top: 15px;
+    }
+
+
+
+    /* MARKETING CONTENT
+    -------------------------------------------------- */
+
+    /* Center align the text within the three columns below the carousel */
+    .marketing .span4 {
+      text-align: center;
+      width:320px;
+    }
+    .marketing h2 {
+      font-weight: normal;
+    }
+    .marketing .span4 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    .marketing 
+    {
+        width:1024px;	
+    }
+
+    /* Featurettes
+    ------------------------- */
+
+    .featurette-divider {
+      margin: 80px 0; /* Space out the Bootstrap <hr> more */
+    }
+    .featurette {
+      padding-top: 120px; /* Vertically center images part 1: add padding above and below text. */
+      overflow: hidden; /* Vertically center images part 2: clear their floats. */
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 576px;
+      }
+      .carousel img {
+        width: auto;
+        height: 576px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+        
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 3000px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+    </style>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+                                   <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+      </asp:ContentPlaceHolder>
+     <script type="text/javascript">
+         function facebook() {
+             alert("Facebook");
+         }
+         function checktab(tab) {
+             if (tab == "home") {
+                 $("#gallerytab").removeClass("active");
+                 $("#hometab").addClass("active");
+             }
+             else if (tab == "gallery") {
+                 $("#hometab").removeClass("active");
+                 $("#gallerytab").addClass("active");
+             }
+             else {
+                 $("#hometab").removeClass("active");
+                 $("#gallerytab").removeClass("active");
+             }
+         }
+         function showGallery() {
+             $("#myModal").modal('show');
+         }
+     </script>
+
+  </head>
+
+  <body>
+  <div class="container" style="width:1024px">
+      
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container" style="width:900px">
+
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#"><span class="fancytext">Ryan&Katie</span></a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav pull-right">
+                <li id="hometab"><a id="home" href="/rgandkp/default.aspx" onclick="checktab('home')";>Home</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twitter.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a id="about" href="/rgandkp/about-us.aspx" onclick="checktab('x');"><i class="icon-comment-alt"></i> About Us</a></li>
+                    <li><a id="proposal" href="/rgandkp/our-proposal.aspx" onclick="checktab('x');"><i class="icon-heart"></i> The Proposal</a></li>
+                    <li><a id="honeymoon" href="/rgandkp/honeymoon.aspx" onclick="checktab('x');"><i class="icon-plane"></i> Honeymoon</a></li>
+                    <li class="divider"></li>
+                    <li class="nav-header">More Information</li>
+                    <li><a href="#" style="margin:auto"><i class="icon-facebook" id="facebook" onclick="facebook();"></i> <i class="icon-twitter"></i> <i class="icon-pinterest"></i></a></li>
+                  </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">The Wedding<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#" id="ceremony" onclick="checktab('x')";><i class="icon-bell"></i> Ceremony</a></li>
+                    <li><a href="#" id="guestbook" onclick="checktab('x')";><i class="icon-book"></i> Guestbook</a></li>
+                    <li><a href="#" id="reception" onclick="checktab('x')";><i class="icon-glass"></i> Reception</a></li>
+                    <li><a href="#" id="" onclick="checktab('x')";></a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" id="venue" onclick="checktab('x')";><i class="icon-home"></i> Venue Information</a></li>
+                    <li><a href="#" id="wedding" onclick="checktab('x')";><i class="icon-group"></i> Wedding Party</a></li>
+                  </ul>
+                </li>
+                <li id="gallerytab"><a id="gallery" href="#contact" onclick="checktab('gallery');showGallery();"><i class="icon-camera"></i> Gallery</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+    <!-- Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Gallery</h3>
+          </div>
+          <div class="modal-body">
+                <p>Some Pix</p>
+          </div>
+          <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <button class="btn btn-primary">Like</button>
+          </div>
+    </div>
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+          <!-- FOOTER -->
+          <footer style="padding:15px">
+                <p class="pull-right"><a href="#">Back to top</a></p>
+                <p style="color:White">&copy; 2012 Ryan Graczyk &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+          </footer>
+    </div><!-- /.container -->
+</div>
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="Scripts/jquery-1.8.3.min.js"></script>
+    <script src="Scripts/bootstrap-transition.js"></script>
+    <script src="Scripts/bootstrap-alert.js"></script>
+    <script src="Scripts/bootstrap-modal.js"></script>
+    <script src="Scripts/bootstrap-dropdown.js"></script>
+    <!--<script src="Scripts/bootstrap-scrollspy.js"></script>-->
+    <script src="Scripts/bootstrap-tab.js"></script>
+    <!--<script src="Scripts/bootstrap-tooltip.js"></script>-->
+    <!--<script src="Scripts/bootstrap-popover.js"></script>-->
+    <script src="Scripts/bootstrap-button.js"></script>
+    <script src="Scripts/bootstrap-collapse.js"></script>
+    <script src="Scripts/bootstrap-carousel.js"></script>
+    <!--<script src="Scripts/bootstrap-typeahead.js"></script>-->
+    <script src="Scripts/widgets.js"></script>
+    <script>
+        !function ($) {
+            $(function () {
+                // carousel demo
+                $('#myCarousel').carousel()
+            })
+        } (window.jQuery)
+    </script>
+  </body>
+</html>
